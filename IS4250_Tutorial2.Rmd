@@ -1,0 +1,30 @@
+---
+title: "Tutorial 2"
+author: "Nurwidya Utami Jati"
+date: "January 29, 2016"
+---
+
+library(dplyr)
+library(ggplot2)
+
+#(1)(a)
+#Statistical index of WaitTime = Average value of WaitTime
+summarise(labs, result = mean(WaitTime))
+
+#Statitical index of Service Satisfaction
+count(labs, SvcSat)
+
+#(1)(b)
+#statistical chart for WaitTime
+qplot(x=WaitTime, data=labs)
+
+#(2)
+#difference in age
+plot(labs$SvcSat, labs$AGE)
+# in average, those who are not satisfied with the service are aged around 60
+# while those who are satisfied are aged around 30
+
+#difference in gender
+plot(labs$Gender, labs$SvcSat)
+# Most of the female and the male are satisfied with the service, given that the number of female and male is almost similar
+# However, The satisfaction percentage is higher in female than in male
